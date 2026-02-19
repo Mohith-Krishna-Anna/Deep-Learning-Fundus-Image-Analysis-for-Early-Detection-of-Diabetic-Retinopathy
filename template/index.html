@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetic Retinopathy Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <div><b>Diabetic Retinopathy Classification</b></div>
+    <div>
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    </div>
+</div>
+
+<div style="text-align:center; padding:40px;">
+    <h2>Normal Eye vs Diabetic Retinopathy</h2>
+    <img src="{{ url_for('static', filename='normal_dr.png') }}" width="70%">
+</div>
+
+<!-- ABOUT PROJECT SECTION -->
+<div class="about-section">
+
+    <h2 class="section-title">ABOUT PROJECT</h2>
+
+    <div class="about-container">
+
+        <!-- Problem -->
+        <div class="about-box">
+            <h3>Problem</h3>
+            <p>
+                Diabetic Retinopathy (DR) is a severe complication of diabetes
+                that damages the blood vessels in the retina and may lead to blindness
+                if not detected early.
+            </p>
+
+            <p>
+                Traditional diagnosis requires manual examination of retinal
+                fundus images by ophthalmologists, which is time-consuming,
+                costly, and prone to human error.
+            </p>
+
+            <p>
+                Early detection is critical to prevent vision loss,
+                but accessibility to expert screening is limited,
+                especially in rural and underdeveloped regions.
+            </p>
+        </div>
+
+        <!-- Solution -->
+        <div class="about-box">
+            <h3>Solution</h3>
+            <p>
+                This project proposes an AI-powered deep learning system
+                using Transfer Learning (EfficientNetB3) to automatically
+                detect and classify Diabetic Retinopathy from retinal fundus images.
+            </p>
+
+            <p>
+                The system classifies images into five severity levels:
+                No DR, Mild, Moderate, Severe, and Proliferative DR.
+            </p>
+
+            <p>
+                The trained model is deployed using Flask,
+                enabling users to upload retinal images and receive
+                instant predictions through a web interface.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

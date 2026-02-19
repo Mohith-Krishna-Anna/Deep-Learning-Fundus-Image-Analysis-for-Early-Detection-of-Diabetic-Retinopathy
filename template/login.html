@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DR Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="auth-body">
+
+    <div class="navbar">
+        <div class="nav-title">DR Login Page</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+    </div>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Login</h2>
+
+            <form method="POST" action="/login">
+                <input type="email" name="email" placeholder="Enter registered email ID" required>
+                <input type="password" name="password" placeholder="Enter Password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+</html>

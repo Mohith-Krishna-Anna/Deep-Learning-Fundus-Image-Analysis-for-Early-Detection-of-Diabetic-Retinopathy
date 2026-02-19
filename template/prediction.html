@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DR Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>Diabetic Retinopathy Classification</h2>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="prediction-container">
+
+        <!-- Upload Section -->
+        <form method="POST" enctype="multipart/form-data">
+            <div class="upload-box">
+                <input type="file" name="image" required>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        {% if image_path %}
+        <div class="image-preview">
+            <img src="{{ image_path }}" alt="Uploaded Image">
+        </div>
+        {% endif %}
+
+        {% if prediction %}
+        <div class="result-box">
+            <h3>Diabetic Retinopathy Classification is :</h3>
+            <h2>{{ prediction }}</h2>
+        </div>
+        {% endif %}
+
+        <!-- DR Stages Section -->
+        <div class="stages">
+
+            <div class="stage-card">
+               <img src="{{ url_for('static', filename='stages/no_dr.png') }}">
+               <div class="stage-label green">No Disease Visible</div>
+            </div>
+
+            <div class="stage-card">
+              <img src="{{ url_for('static', filename='stages/mild.png') }}">
+               <div class="stage-label yellow">Mild DR</div>
+            </div>
+
+            <div class="stage-card">
+               <img src="{{ url_for('static', filename='stages/moderate.png') }}">
+               <div class="stage-label orange">Moderate DR</div>
+            </div>
+
+            <div class="stage-card">
+                <img src="{{ url_for('static', filename='stages/severe.png') }}">
+                <div class="stage-label darkorange">Severe DR</div>
+            </div>
+
+            <div class="stage-card">
+              <img src="{{ url_for('static', filename='stages/pdr.png') }}">
+               <div class="stage-label red">Proliferative DR</div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>
